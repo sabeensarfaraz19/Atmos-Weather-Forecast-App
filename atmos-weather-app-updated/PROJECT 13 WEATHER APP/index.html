@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101d35" />
+  <title>Atmos — Weather Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Atmos home">
+        <span class="brand-mark"><i class="fa-solid fa-cloud-sun"></i></span>
+        <span>atmos<span class="brand-dot">.</span></span>
+      </a>
+      <span class="topbar-label"><span class="status-dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR DAILY WEATHER BRIEFING</p>
+      <h1>Find your <span>forecast.</span></h1>
+      <p class="intro-copy">A clearer view of the weather, wherever you are.</p>
+    </section>
+
+    <form class="weather-search" id="weatherSearch" role="search">
+      <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+      <label class="sr-only" for="cityInput">Search city</label>
+      <input id="cityInput" class="city-input" type="search" placeholder="Search a city, e.g. Karachi"
+        autocomplete="off" required />
+      <button class="search-button" type="submit"><span>Search</span><i class="fa-solid fa-arrow-right"
+          aria-hidden="true"></i></button>
+    </form>
+
+    <p class="message" id="statusMessage" role="status" aria-live="polite">Loading weather...</p>
+
+    <section class="weather-panel" aria-label="Current weather">
+      <div class="current-weather">
+        <div class="location-line"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <h2 class="weather-city" id="weatherCity">Karachi, Pakistan</h2>
+        </div>
+        <p class="weather-date" id="weatherDate">Current local time</p>
+        <div class="condition-row">
+          <div>
+            <p class="condition-label">CURRENT CONDITIONS</p>
+            <p class="weather-condition" id="weatherCondition">—</p>
+          </div>
+          <img class="weather-icon" id="weatherIcon" src="" alt="" hidden />
+        </div>
+        <div class="temperature-line"><span class="temperature" id="temperature">—</span><span class="degree">°C</span>
+        </div>
+        <p class="feels-line">Feels like <strong id="feelsLike">—</strong></p>
+        <div class="high-low"><span><i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Low <strong
+              id="tempMin">—</strong></span><span><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> High <strong
+              id="tempMax">—</strong></span></div>
+      </div>
+      <aside class="weather-art" aria-hidden="true">
+        <div class="sun-glow"></div>
+        <div class="art-orbit orbit-one"></div>
+        <div class="art-orbit orbit-two"></div>
+        <i class="fa-solid fa-cloud-sun"></i>
+        <span class="art-caption">A little more in tune<br />with your world.</span>
+      </aside>
+    </section>
+
+    <section class="details-section" aria-labelledby="detailsTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">AT A GLANCE</p>
+          <h2 id="detailsTitle">Weather details</h2>
+        </div><span class="units-label">METRIC UNITS</span>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card"><span class="detail-icon humidity-icon"><i class="fa-solid fa-droplet"></i></span>
+          <div>
+            <p>Humidity</p><strong id="humidity">—</strong><small>Moisture in the air</small>
+          </div>
+        </article>
+        <article class="detail-card"><span class="detail-icon wind-icon"><i class="fa-solid fa-wind"></i></span>
+          <div>
+            <p>Wind speed</p><strong id="windSpeed">—</strong><small>Current wind</small>
+          </div>
+        </article>
+        <article class="detail-card"><span class="detail-icon pressure-icon"><i
+              class="fa-solid fa-gauge-high"></i></span>
+          <div>
+            <p>Pressure</p><strong id="pressure">—</strong><small>Atmospheric pressure</small>
+          </div>
+        </article>
+        <article class="detail-card"><span class="detail-icon visibility-icon"><i class="fa-solid fa-eye"></i></span>
+          <div>
+            <p>Visibility</p><strong id="visibility">—</strong><small>Distance you can see</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer"><span>Made to keep you in the know.</span><span>Weather data by OpenWeather</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
